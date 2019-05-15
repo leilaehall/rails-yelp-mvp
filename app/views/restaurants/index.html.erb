@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurants</title>
+</head>
+<body>
+  <h1>Restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+  <p><%= restaurant.name %></p>
+  <p><%= restaurant.address %></p>
+  <p><%= restaurant.phone_number %></p>
+  <p><%= restaurant.category %></p>
+  <p><%= link_to 'Show', restaurant %></p>
+  <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %></p>
+  <p><%= link_to 'Destroy', restaurant,
+  method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+</body>
+</html>
